@@ -24,12 +24,12 @@ app.post('/displayAddress', (req, res) => {
     // In case you are running the app on ypur localhost 
     let localIp = '173.177.140.42';
 
-    let TheIP = !(IpAddress.includes('::')) || localIp
+    
     console.log('server : ', TheIP);
 
 
 
-    getIPAddress(TheIP).then((body) => {
+    getIPAddress(IpAddress).then((body) => {
        
         if (!body) return console.log('unable to find response!');
         if (body === 'there is an error Unable to find that address.') { throw new Error('Unable to find that address.') };
