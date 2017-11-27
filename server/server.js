@@ -25,7 +25,7 @@ app.post('/displayAddress', (req, res) => {
     let localIp = '173.177.140.42';
 
     
-    console.log('server : ', TheIP);
+    console.log('server : ', localIp);
 
 
 
