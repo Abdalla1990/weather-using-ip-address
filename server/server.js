@@ -19,14 +19,17 @@ app.post('/displayAddress', (req, res) => {
 
     //console.log(req.body);
     Address = req.body.address;
+    // heroku Usage 
     IpAddress = requestIp.getClientIp(req); 
+    // In case you are running the app on ypur localhost 
     let localIp = '173.177.140.42';
 
-    console.log('server : ', IpAddress);
+    let TheIP = !(IpAddress.includes('::')) || localIp
+    console.log('server : ', TheIP);
 
 
 
-    getIPAddress(IpAddress).then((body) => {
+    getIPAddress(TheIP).then((body) => {
        
         if (!body) return console.log('unable to find response!');
         if (body === 'there is an error Unable to find that address.') { throw new Error('Unable to find that address.') };
