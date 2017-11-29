@@ -25,7 +25,7 @@ app.post('/displayAddress', (req, res) => {
     let localIp = '173.177.140.42';
 
     
-    console.log('server : ', localIp);
+    console.log('server : ', IpAddress);
 
 
 
@@ -54,7 +54,7 @@ app.post('/displayAddress', (req, res) => {
                     lng: lngtitude,
                     IPAddress: IpAddress ,
                     temp: temp.data.currently.temperature
-                }).status(200).send(doc);
+                })
 
             }, (err) => {
                 res.status(400).send(err);
